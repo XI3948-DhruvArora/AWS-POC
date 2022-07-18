@@ -59,5 +59,7 @@ def main():
     message=messenger()
     query.createConnection("postgres.cedt1mj8y7vr.ap-south-1.rds.amazonaws.com","postgres","admin","postgres")
     query.createCursor()
-    query.selectLast15()
+    result=query.selectLast15()
+    message.sendEmail(result)
+
 
